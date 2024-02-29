@@ -6,7 +6,7 @@ function solution(n) {
             sum+=j;
             if(sum==n) {
                 cnt++;
-                break;
+                //break;
             }
         }
     }
