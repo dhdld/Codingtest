@@ -8,7 +8,7 @@ function solution(n) {
                 cnt++;
                 break;
             }
-            if(sum+j > n) break;
+            else if(sum > n) break;
         }
     }
     return cnt;
