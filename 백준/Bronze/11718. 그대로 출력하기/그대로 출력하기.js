@@ -1,5 +1,3 @@
-let input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+let input = require('fs').readFileSync('/dev/stdin').toString();
 
-for (let i of input) {
-    console.log(i);
-}
+console.log(input);
