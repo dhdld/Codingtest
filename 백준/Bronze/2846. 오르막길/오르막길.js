@@ -1,7 +1,5 @@
 let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n')
-
 let n = Number(input[0])
-
 let arr = input[1].split(' ').map(Number)
 let dep = []
 let max = 0
@@ -16,7 +14,7 @@ for (let i = 1; i < n; i++) {
 }
 
 for (let i = 0; i < dep.length; i++) {
-    max = Math.max(max, dep[i][1] - dep[i][0])
+    if (dep[i][1] - dep[i][0] > max)
+        max = dep[i][1] - dep[i][0]
 }
-
 console.log(max)
