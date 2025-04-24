@@ -3,7 +3,7 @@ from collections import deque
 def solution(n, edge):
     edge = sorted(edge)
     d=[0]*(n+1)
-    queue=deque()
+    queue=deque([1])
     graph=[[] for _ in range(n+1)]
     answer=0
     
@@ -11,7 +11,6 @@ def solution(n, edge):
         graph[i[0]].append(i[1])
         graph[i[1]].append(i[0])
 
-    queue.append(1)
     d[1]=1
     while queue:
         cur = queue.popleft()
