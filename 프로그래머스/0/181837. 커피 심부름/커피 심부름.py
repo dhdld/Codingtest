@@ -1,8 +1,8 @@
 def solution(order):
     answer = 0
-    cafelatte = "cafelatte"
+    latte = "latte"
     for i in order:
-        if cafelatte in i:
+        if latte in i:
             answer+=5000
         else:
             answer+=4500
