@@ -1,15 +1,14 @@
-let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n')
+const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n')
+const [n,k] = input[0].split(' ').map(Number)
+const arr = input[1].split(' ').map(Number)
+let sum = arr.slice(0,k).reduce((acc, cur)=> acc + cur, 0) // 0부터 k개의 합
+let answer = sum
 
-let [n, k] = input[0].split(' ').map(Number)
-let days = input[1].split(' ').map(Number)
-let res = []
-
-for (let i = 0; i < n - k + 1; i++) {
-    let sum = 0
-    for (let j = i; j < i + k; j++) {
-        sum += days[j]
-    }
-    res.push(sum)
+for(let i=0; i<n-k; i++){
+    sum += arr[i+k]- arr[i]
+    if(sum > answer) // 기존의 합보다 클 경우 답 변경
+        answer = sum
 }
 
-console.log(Math.max(...res))
+console.log(answer)
+
