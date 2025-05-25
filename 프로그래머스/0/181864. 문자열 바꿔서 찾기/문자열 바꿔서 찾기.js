@@ -4,6 +4,5 @@ function solution(myString, pat) {
         if(myString[i] =='A') newStr.push('B')
         else newStr.push('A')
     }
-    let answer = newStr.join('')
-    return answer.includes(pat) ? 1 : 0
+    return newStr.join('').includes(pat) ? 1 : 0
 }
